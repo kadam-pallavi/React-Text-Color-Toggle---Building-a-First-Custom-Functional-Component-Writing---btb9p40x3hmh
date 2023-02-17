@@ -1,36 +1,30 @@
-import React, { useEffect, useState } from "react";
-import "../styles/App.css";
+import React, {useEffect, useState} from 'react'
+import '../styles/App.css';
 
 const App = () => {
-  //code here
+//code here 
   const [className, setClassName] = useState("redColor");
   const [value, setValue] = useState(true);
-
-  function onButtonClick() {
+  
+  const updateOnClick = () => {
     setValue(!value);
-    // true to false and false to true
   }
-
-  // whenever react component loads for the first time
-  // or whenever we want to monitor any change in a state
-  useEffect(() => {
-    if (value === false) {
+  useEffect( ()=>{
+    if(value == true){
       setClassName("redColor");
     }
-    if (value === true) {
+    else{
       setClassName("blueColor");
     }
-  }, [value]); // dependency array - whatever variable is inside this,
-  // whenever it changes, run useEffect.
-
+  })
+  
   return (
     <div id="main">
-      <p className={className}>Newton School</p>
-      <button id="button" onClick={onButtonClick}>
-        Change Style
-      </button>
+      <h1 className={className} >Newton School</h1>
+      <button id='button' onClick={updateOnClick}>Change Style</button>
     </div>
-  );
-};
+  )
+}
+
 
 export default App;
