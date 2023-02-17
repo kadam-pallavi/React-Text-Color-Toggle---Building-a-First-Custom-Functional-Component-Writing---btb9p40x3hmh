@@ -14,10 +14,10 @@ const App = () => {
   // whenever react component loads for the first time
   // or whenever we want to monitor any change in a state
   useEffect(() => {
-    if (value === true) {
+    if (value === false) {
       setClassName("redColor");
     }
-    if (value === false) {
+    if (value === true) {
       setClassName("blueColor");
     }
   }, [value]); // dependency array - whatever variable is inside this,
